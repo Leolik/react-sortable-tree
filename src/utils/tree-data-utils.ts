@@ -18,10 +18,9 @@ export type WalkAndMapFunctionParameters = FullTree & {
   ignoreCollapsed?: boolean | undefined
 }
 
-export interface FlatDataItem extends TreeNode, TreePath {
+export interface FlatDataItem extends TreeNode, TreePath, TreeIndex {
   lowerSiblingCounts: number[]
   parentNode: TreeItem
-  treeIndex: TreeIndex
 }
 
 /**
