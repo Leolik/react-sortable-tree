@@ -21,6 +21,7 @@ export type WalkAndMapFunctionParameters = FullTree & {
 export interface FlatDataItem extends TreeNode, TreePath {
   lowerSiblingCounts: number[]
   parentNode: TreeItem
+  treeIndex: TreeIndex
 }
 
 /**

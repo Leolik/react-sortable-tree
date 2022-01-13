@@ -1,5 +1,5 @@
 {
-  "name": "@demandcluster/react-sortable-tree",
+  "name": "@leolik/react-sortable-tree",
   "version": "4.0.0-beta.11",
   "description": "Drag-and-drop sortable component for nested data and hierarchies",
   "main": "./index.js",
@@ -26,11 +26,9 @@
     "lint": "eslint --fix '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
     "prepublishOnly": "yarn test && yarn build",
     "release": "standard-version",
-    "test": "jest --env=jsdom",
-    "test:watch": "jest --watchAll",
     "storybook": "start-storybook -p ${PORT:-3001} -h 0.0.0.0",
     "postbuild": "yarn copy",
-    "copy": "rimraf dist/tests.d.ts && shx cp -r dist/*.d.ts dist/esm && shx mv dist/* dist && shx cp package.json LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this.jest=undefined; this['lint-staged']=undefined;\"",
+    "copy": "rimraf dist/tests.d.ts && shx cp -r dist/*.d.ts dist/esm && shx mv dist/* dist && shx cp package.json LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this['lint-staged']=undefined;\"",
     "publish:alpha": "cd dist && npm publish --tag alpha",
     "publish:beta": "cd dist && npm publish --tag beta",
     "publish:release": "cd dist && npm publish"
@@ -48,7 +46,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/nosferatu500/react-sortable-tree"
+    "url": "https://github.com/leolik/react-sortable-tree"
   },
   "keywords": [
     "react",
@@ -61,65 +59,11 @@
   },
   "contributors": [
     "Chris Fritz",
-    "Vitalii Shvetsov"
+    "Vitalii Shvetsov",
+    "Roman Sukochev"
   ],
   "license": "MIT",
   "bugs": "https://github.com/nosferatu500/react-sortable-tree/issues",
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest",
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "globals": {
-      "ts-jest": {
-        "tsconfig": {
-          "target": "es2015",
-          "jsx": "react-jsx"
-        }
-      }
-    },
-    "setupFilesAfterEnv": [
-      "./node_modules/jest-enzyme/lib/index.js"
-    ],
-    "setupFiles": [
-      "./test-config/shim.js",
-      "./test-config/test-setup.js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
-    "moduleDirectories": [
-      "node_modules"
-    ],
-    "modulePathIgnorePatterns": [
-      "dist"
-    ],
-    "moduleNameMapper": {
-      "\\.(css|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "^dnd-core$": "dnd-core/dist/cjs",
-      "^react-dnd$": "react-dnd/dist/cjs",
-      "^react-dnd-html5-backend$": "react-dnd-html5-backend/dist/cjs",
-      "^react-dnd-touch-backend$": "react-dnd-touch-backend/dist/cjs",
-      "^react-dnd-test-backend$": "react-dnd-test-backend/dist/cjs",
-      "^react-dnd-test-utils$": "react-dnd-test-utils/dist/cjs"
-    },
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "html",
-      "text",
-      "text-summary"
-    ],
-    "collectCoverageFrom": [
-      "src/**/*.{js,ts,tsx}",
-      "tests/**/*.{js,ts,tsx}"
-    ]
-  },
   "dependencies": {
     "@nosferatu500/react-dnd-scrollzone": "^2.0.4",
     "lodash.isequal": "^4.5.0",
@@ -145,7 +89,6 @@
     "@testing-library/react": "^12.1.2",
     "@types/babel-plugin-macros": "^2.8.5",
     "@types/enzyme": "^3.10.10",
-    "@types/jest": "^27.0.2",
     "@types/lodash.isequal": "^4.5.5",
     "@types/react": "^17.0.32",
     "@types/react-dom": "^17.0.10",
@@ -161,11 +104,8 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jest": "^25.2.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "jest": "^27.3.1",
-    "jest-enzyme": "^7.1.2",
     "json": "^11.0.0",
     "prop-types": "^15.7.2",
     "postcss": "^8.3.11",
@@ -180,7 +120,6 @@
     "rollup-plugin-esbuild": "^4.6.0",
     "rollup-plugin-postcss": "^4.0.1",
     "shx": "^0.3.3",
-    "ts-jest": "^27.0.7",
     "tslib": "^2.3.1",
     "typescript": "^4.4.4"
   },
