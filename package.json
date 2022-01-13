@@ -1,6 +1,6 @@
 {
   "name": "@leolik/react-sortable-tree",
-  "version": "4.0.0-beta.11",
+  "version": "4.0.0-beta.11.1",
   "description": "Drag-and-drop sortable component for nested data and hierarchies",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -23,12 +23,12 @@
     "build:storybook": "build-storybook -o build",
     "clean": "rimraf dist",
     "clean:storybook": "rimraf build",
-    "lint": "eslint --fix '*.{js,json}' '{src,tests}/**/*.{ts,tsx}'",
-    "prepublishOnly": "yarn test && yarn build",
+    "lint": "eslint --fix '*.{js,json}' 'src/**/*.{ts,tsx}'",
+    "prepublishOnly": "yarn build",
     "release": "standard-version",
     "storybook": "start-storybook -p ${PORT:-3001} -h 0.0.0.0",
     "postbuild": "yarn copy",
-    "copy": "rimraf dist/tests.d.ts && shx cp -r dist/*.d.ts dist/esm && shx mv dist/* dist && shx cp package.json LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this['lint-staged']=undefined;\"",
+    "copy": "shx cp -r dist/*.d.ts dist/esm && shx mv dist/* dist && shx cp package.json LICENSE dist && json -I -f dist/package.json -e \"this.private=false; this.devDependencies=undefined; this.optionalDependencies=undefined; this.scripts=undefined; this.prettier=undefined; this['lint-staged']=undefined;\"",
     "publish:alpha": "cd dist && npm publish --tag alpha",
     "publish:beta": "cd dist && npm publish --tag beta",
     "publish:release": "cd dist && npm publish"
