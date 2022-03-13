@@ -1,6 +1,6 @@
 {
   "name": "@leolik/react-sortable-tree",
-  "version": "4.0.0-beta.11.4",
+  "version": "4.0.0-beta.11.5",
   "description": "Drag-and-drop sortable component for nested data and hierarchies",
   "main": "./index.js",
   "types": "./index.d.ts",
@@ -11,6 +11,10 @@
       "module": "./esm/index.js",
       "import": "./esm/index.mjs",
       "default": "./index.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     }
   },
   "files": [
@@ -107,9 +111,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "json": "^11.0.0",
-    "prop-types": "^15.7.2",
     "postcss": "^8.3.11",
     "prettier": "^2.4.1",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dnd-test-backend": "^14.0.1",
     "react-dnd-touch-backend": "^14.1.1",
